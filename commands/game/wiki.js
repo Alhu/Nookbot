@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args, level) => {
   const search = args.join(' ').toLowerCase();
   const link = `https://duckduckgo.com/?q=%5C${escape(search)}+site%3Ahttps%3A%2F%2Fanimalcrossing.fandom.com/fr/`;
 
-  const waitingMsg = await message.channel.send('Please wait while Nookbot counts its bells...');
+  const waitingMsg = await message.channel.send('Merci de patienter, Nook compte ses clochettes...');
 
   // eslint-disable-next-line consistent-return
   request(link, (err, res, html) => {
@@ -16,14 +16,14 @@ module.exports.run = async (client, message, args, level) => {
 	  erreur = console.error(err || `DuckDuckGo Error: Status Code-${res.statusCode} Status Message-${res.statusMessage}`);
 
       waitingMsg.delete();
-      return client.error(message.channel, 'Error!', 'There was an error when searching for your terms!', erreurs);
+      return client.error(message.channel, 'Erreur!', 'Une erreur s\'est produite lors de votre recherche !', erreurs);
     }
 
     const nookLink = html.match(/(?<=uddg=)[^']+/);
 
     if (!/%2F%2Fanimalcrossing.fandom\.com%2F/.test(nookLink)) {
       waitingMsg.delete();
-      return client.error(message.channel, 'Not On The Wiki!', 'What you searched for is not on the wiki!');
+      return client.error(message.channel, 'N\'apparait pas sur le wiki !', 'Votre recherche n\'est pas présente sur le wiki.');
     }
 
     request(unescape(nookLink), (err2, res2, html2) => {
@@ -132,7 +132,7 @@ module.exports.run = async (client, message, args, level) => {
 
 module.exports.conf = {
   guildOnly: false,
-  aliases: ['character', 'char', 'villager', 'vil', 'item'],
+  aliases: ['habitant', 'hab', 'villageois', 'vil'],
   permLevel: 'User',
   args: 1,
   blockedChannels: ['538938170822230026'],
@@ -141,6 +141,6 @@ module.exports.conf = {
 module.exports.help = {
   name: 'wiki',
   category: 'game',
-  description: 'Gets info from the wiki on specified search',
-  usage: 'wiki <search>',
+  description: 'Trouver des informations sur vos habitants !',
+  usage: 'wiki <habitant>',
 };
