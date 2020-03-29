@@ -120,9 +120,9 @@ module.exports.run = async (client, message, args, level) => {
         .setTimestamp()
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setTitle(name.slice(0, 256))
-        .setDescription(`${bio}[Read More](${unescape(nookLink).slice(0, 29)}${unescape(nookLink).slice(29).replace('(', '%28').replace(')', '%29')})`.slice(0, 2048))
+        .setDescription(`${bio}[En savoir +](${unescape(nookLink).slice(0, 29)}${unescape(nookLink).slice(29).replace('(', '%28').replace(')', '%29')})`.slice(0, 2048))
         .setImage(image)
-        .setFooter('Info from animalcrossing.fandom.com', client.user.displayAvatarURL());
+        .setFooter('Depuis animalcrossing.fandom.com', client.user.displayAvatarURL());
 
       waitingMsg.delete();
       return message.channel.send(embed);
