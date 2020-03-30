@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
     case 'île':
     case 'ville':{
       if (args.length === 1) {
-        return client.error(message.channel, 'Vous n\avez pas entré de nom !', 'Merci d\inscrire le nom de votre île.');
+        return client.error(message.channel, 'Vous n\'avez pas entré de nom !', 'Merci d\'inscrire le nom de votre île.');
       }
 
       const name = args.slice(1).join(' ');
