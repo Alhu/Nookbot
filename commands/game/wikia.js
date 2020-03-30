@@ -20,8 +20,6 @@ var tomate = "Prune";
   return message.channel.send(`${id}{tomate}`);
 };
 
-message.delete();
-
 module.exports.conf = {
   guildOnly: false,
   aliases: [],
