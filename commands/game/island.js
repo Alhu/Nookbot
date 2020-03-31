@@ -88,7 +88,6 @@ module.exports.run = async (client, message, args, level, Discord) => {
       return client.success(message.channel, 'Hémisphère enregistré !', `Hemisphère : **${hemisphere}**`);
     }
     case 'profil':
-    case 'switch':
     case 'sn': {
       if (args.length === 1) {
         return client.error(message.channel, 'Vous n\'avez pas entré de nom pour votre profil', 'Merci d\inscrire un nom pour votre profil Switch.');
@@ -233,7 +232,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
       } else {
         member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || client.searchMember(args.join(' '));
         if (!member) {
-          return client.error(message.channel, 'Unknown Member!', 'Could not find a member by that name!');
+          return client.error(message.channel, 'Personne inconnue !', 'Ce pseudo n\'a pas été trouvé.');
         }
       }
 
@@ -262,9 +261,9 @@ module.exports.run = async (client, message, args, level, Discord) => {
 
       if (msg.length === 0) {
         if (member.id === message.author.id) {
-          return client.error(message.channel, 'No Island Information Found!', 'You have not supplied any information about your island! You can do so by running \`.island <islandname|fruit|charactername|hemisphere|profilename|friendcode> <name|fruit|hemisphere|code>\` with any of the options. Ex. \`.island fruit pears\`.');
+          return client.error(message.channel, 'Aucune information sur votre île !', "Vous n'avez entré aucune information sur votre île. Vous pouvez le faire en tapant : "\`.is <ile|fruit|prenom|hemisphere|profil|sw> <nom|fruit|hemisphere|code>\`. Ex. \`.is fruit poires\`.');
         }
-        return client.error(message.channel, 'No Island Information Found!', `${member.displayName} has not supplied any information about their island!`);
+        return client.error(message.channel, 'Aucune information trouvée !', `${member.displayName}`, "n\' pas inscrit d\'informations.");
       }
 
       const embed = new Discord.MessageEmbed()
