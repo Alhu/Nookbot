@@ -261,7 +261,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
 
       if (msg.length === 0) {
         if (member.id === message.author.id) {
-          return client.error(message.channel, 'Aucune information sur votre île !', "Vous n'avez entré aucune information sur votre île. Vous pouvez le faire en tapant : "\`.is <ile|fruit|prenom|hemisphere|profil|sw> <nom|fruit|hemisphere|code>\`. Ex. \`.is fruit poires\`.');
+          return client.error(message.channel, 'Aucune information sur votre île !', "Vous n'avez entré aucune information sur votre île. Vous pouvez le faire en tapant : "\`.is <ile|fruit|prenom|hemisphere|profil|sw> <nom|fruit|hemisphere|code>\`. Ex. \`.is fruit poires\`.);
         }
         return client.error(message.channel, 'Aucune information trouvée !', `${member.displayName}`, "n\' pas inscrit d\'informations.");
       }
