@@ -203,7 +203,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
         case 'sn':
           client.userDB.set(message.author.id, '', 'island.profileName');
           return client.success(message.channel, 'Successfully cleared your Switch profile name!', 'To set your Switch profile name again, use `.island profilename <name>`!');
-        case 'friendcode':
+        case 'codeami':
         case 'fc':
         case 'code':
           if (client.userDB.has(message.author.id, 'friendcode')) {
