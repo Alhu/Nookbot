@@ -155,7 +155,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
         }
 
         if (!member) {
-          return client.error(message.channel, 'Invalid Member!', 'Please mention a valid member of this server to moderate their island settings!');
+          return client.error(message.channel, 'Membre invalide !', 'Merci de mentionner un utilisateur du serveur pour modérer un des paramètres.');
         }
 
         memberID = member.id;
@@ -286,7 +286,7 @@ module.exports.conf = {
 module.exports.help = {
   name: 'island',
   category: 'game',
-  description: 'Island information display',
-  usage: 'island <islandname|fruit|charactername|hemisphere|profilename|friendcode> <name|fruit|hemisphere|code>',
-  details: '<islandname> => Set the name of your island.\n<fruit> => Set the fruit that is native on your island.\n<charactername> => Set the name of your character on the island.\n<hemisphere> => Set the hemisphere your island is in.\n<profilename> => Set the name of your Switch profile.\n<friendcode> => Set your Switch friendcode.',
+  description: 'Fonctionnement de la fonction Island',
+  usage: 'island <ile|fruit|prenom|hemisphere|profil|codeami> <nom|fruit|hemisphere|code>',
+  details: '<ile> => Permet de renseigner le nom de votre île.\n<fruit> => Permet de renseigner le fruit initial de votre île.\n<prenom> => Permet de renseigner le nom de votre personnage.\n<hemisphere> => Permet de renseigner l\'hémisphère dans lequel se trouve votre île.\n<profilename> => Permet de renseigner le nom de votre compte Nintendo.\n<friendcode> => Permet de renseigner votre code ami.',
 };
