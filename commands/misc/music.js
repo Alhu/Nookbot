@@ -99,8 +99,8 @@ Playing: ${client.songQueue.playing ? client.emoji.checkMark : client.emoji.redX
         const titles = client.playlist.map((v) => v);
         // Sort the playlist based on the search, and return the top result
         const search = args.slice(1).join(' ').toLowerCase()
-          .replace(/animal|crossing|ost|orginal|soundtrack|[^\w]/gi, ' ')
-          .replace(/\s+/g, ' ')
+          //.replace(/animal|crossing|ost|orginal|soundtrack|[^\w]/gi, ' ')
+          //.replace(/\s+/g, ' ')
           .trim();
         const titleName = findBest(search, titles).bestMatch.target;
         const songID = client.playlist.findKey((v) => v === titleName);
