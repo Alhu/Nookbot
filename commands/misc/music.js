@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
   // Secret update command to redownload the update, only Tristan can use
   // Tristan's UserID
   if (args[0] === 'update') {
-    if (message.author.id === '170307091628556289' || message.author.id === '403103000630919169') {
+    if (message.author.id === '245491151581347840' || message.author.id === '245491151581347840') {
       return ytpl('PLmJ4dQSfFie-81me0jlzewxPIxKuO2-sI', { limit: 0 }, (err, playlistObj) => {
         if (err) {
           console.error(err);
@@ -42,7 +42,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
   const updateInfo = async (updateTitle, updateDesc) => {
     // Prepare the embed
     const embed = new Discord.MessageEmbed()
-      .setTitle('__**•• DJ Nookbot ••**__')
+      .setTitle('__**•• DJ Kéké ••**__')
       .setDescription(`Played: ${client.songQueue.played} song${client.songQueue.played !== 1 ? 's' : ''} | Total Time: ${client.humanTimeBetween(0, client.songQueue.timePlayed * 1000) || '0 seconds'}
 Playing: ${client.songQueue.playing ? client.emoji.checkMark : client.emoji.redX} | Shuffle Mode: ${client.songQueue.shuffle ? client.emoji.checkMark : client.emoji.redX}`)
       .setColor('#1de9b6')
