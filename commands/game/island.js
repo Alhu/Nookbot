@@ -102,7 +102,7 @@ module.exports.run = async (client, message, args, level, Discord) => {
 
       return client.success(message.channel, 'Nom de profil enregistré !', `Profil Switch : **${name}**`);
     }
-    case 'code ami':
+    case 'codeami':
     case 'sw':
     case 'code': {
       if (args.length === 1) {
