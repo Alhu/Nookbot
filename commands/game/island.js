@@ -288,5 +288,5 @@ module.exports.help = {
   category: 'game',
   description: 'Fonctionnement de la fonction Island',
   usage: 'island <ile|fruit|prenom|hemisphere|profil|codeami> <nom|fruit|hemisphere|code>',
-  details: '<ile> => Permet de renseigner le nom de votre île.\n<fruit> => Permet de renseigner le fruit initial de votre île.\n<prenom> => Permet de renseigner le nom de votre personnage.\n<hemisphere> => Permet de renseigner l\'hémisphère dans lequel se trouve votre île.\n<profilename> => Permet de renseigner le nom de votre compte Nintendo.\n<friendcode> => Permet de renseigner votre code ami.',
+  details: '<ile> => Permet de renseigner le nom de votre île.\n<fruit> => Permet de renseigner le fruit initial de votre île.\n<prenom> => Permet de renseigner le nom de votre personnage.\n<hemisphere> => Permet de renseigner l\'hémisphère dans lequel se trouve votre île.\n<profil> => Permet de renseigner le nom de votre compte Nintendo.\n<codeami> => Permet de renseigner votre code ami.',
 };
